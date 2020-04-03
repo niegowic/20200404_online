@@ -71,6 +71,7 @@ kubectl get pods -o wide
 ```
 ![all](img/all.png)
 Now the pods should be spread across all nodes.
+
 6. Taint your first node with *NoExecute* taint:
 ```
 kubectl taint node  <first-node-name> key=stop:NoExecute
@@ -94,7 +95,7 @@ kubectl taint nodes <third-node-name> color=green:NoSchedule-
 kubectl describe node <nodename>
 ```
 ![node labels](img/node_labels.png)
-## END LAB
+
 2. Add a label to first two nodes:
 ```
 kubectl label nodes <first-node-name> <second-node-name> webzone=zone1
@@ -114,6 +115,7 @@ kubectl get pods -o wide
 ```
 The pods should be deployed to first two nodes
 ![nodeaffinity](img/node_aff.png)
+
 6. Delete the deployment
 ```
 kubectl delete -f files/4_deployment.yaml
@@ -211,5 +213,7 @@ Now, all pods should work together on two nodes
 ![both](img/both_redi_nginx.png)
 
 <br><br>
+
+## END LAB
 
 <center><p>&copy; 2019 Chmurowisko Sp. z o.o.<p></center>
